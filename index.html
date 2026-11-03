@@ -1,0 +1,86 @@
+```html
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>മൈൻഡ്‌ഫുൾനെസ്സ് (Mindfulness Tracker)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Manrope & Noto Sans Malayalam -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3ebe3',
+                            200: '#ca9bca',
+                            300: '#9ec49e',
+                            400: '#75a475',
+                            500: '#528552',
+                            600: '#3f6a3f',
+                            700: '#335433',
+                            800: '#2a442a',
+                            900: '#233923',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Malayalam', 'Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans Malayalam', 'Manrope', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7f3d0;
+            border-radius: 9999px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 px-4 sm:px-8 py-3.5 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-spa text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg leading-tight bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">മൈൻഡ്‌ഫുൾനെസ്സ് (Mindfulness)</h1>
+                    <p class="text-[10px] text-slate-400">മനസ്സമാധാനവും ആശ്വാസവും</p>
+                </div>
+            </div>
+
+            <!-- Controls (Theme Toggle & Profile Name) -->
+            <div class="flex items-center gap-3">
+                <!-- User Name Input / Display -->
+                <div id="userNameContainer" class="relative flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <i class="fa-solid fa-user-circle text-emerald-600 dark:text-emerald-400 mr-2 text-sm"></i>
+                    <input id="userNameInput" type="text" placeholder="പേര് ടൈപ്പ് ചെയ്യൂ..." class="bg-transparent text-xs font-semibold focus:outline-none text-slate-700 dark:text-slate-200 w-28 sm:w-36" />
